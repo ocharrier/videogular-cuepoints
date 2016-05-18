@@ -7,7 +7,9 @@ angular.module('uk.ac.soton.ecs.videogular.plugins.cuepoints', [])
 			return {
 				restrict: 'E',
 				require: '^videogular',
-				templateUrl: 'bower_components/videogular-cuepoints/cuepoints.html',
+				templateUrl: function(element, attrs) {
+					return attrs.templateUrl || 'videogular-cuepoints/cuepoints.html';
+				},
 				scope: {
 					cuepoints: '=vgCuepointsConfig',
 					theme: '=vgCuepointsTheme',
@@ -41,5 +43,10 @@ angular.module('uk.ac.soton.ecs.videogular.plugins.cuepoints', [])
 					updateTheme($scope.theme);
 				},
 			};
-		}]);
+		}])
+	.run(['$templateCache', function($templateCache) {
+		$templateCache.put('videogular-cuepoints/cuepoints.html',
+			'<vg-cuepoint ng-repeat="cuepoint in cuepoints.points" ng-click="onCuepointClick(cuepoint)" ng-style="cuepointStyle(cuepoint)"></vg-cuepoint>'
+		);
+	}]);
 })();
