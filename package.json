@@ -1,0 +1,22 @@
+{
+  "name": "videogular-cuepoints",
+  "version": "1.0.0",
+  "description": "videogular-cuepoints ====================",
+  "main": "cuepoints.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocharrier/videogular-cuepoints.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocharrier/videogular-cuepoints/issues"
+  },
+  "homepage": "https://github.com/ocharrier/videogular-cuepoints#readme",
+  "dependencies": {
+    "videogular-controls": "^1.4.4"
+  }
+}
